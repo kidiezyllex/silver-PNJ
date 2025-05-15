@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNJ Silver - Trang sức bạc cao cấp</title>
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- AOS CDN Link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/CSS/luoi-san-pham.css">
+    <link rel="stylesheet" href="/CSS/trang-dich.css">
+    <link rel="stylesheet" href="/CSS/trang-chu.css">
+    <link rel="stylesheet" href="/CSS/dieu-huong.css">
+    <link rel="stylesheet" href="/CSS/di-dong.css">
+    <style>
+        @media (max-width: 768px) {
+            .hero {
+                height: 50vh !important;
+                min-height: 300px !important;
+                margin-bottom: 20px !important;
+            }
+            
+            .slideshow-carousel {
+                height: 100% !important;
+            }
+            
+            .slideshow-slide {
+                height: 100% !important;
+            }
+            
+            .slideshow-content {
+                height: 100% !important;
+            }
+            
+            .slideshow-image {
+                height: 100% !important;
+            }
+            
+            .slideshow-image img {
+                height: 100% !important;
+                object-position: center !important;
+            }
+            
+            /* Fix product section */
+            .product-gallery {
+                flex-direction: column !important;
+            }
+            
+            .product-gallery__image-list,
+            .product-info {
+                width: 100% !important;
+            }
+            
+            /* Fix footer */
+            .footer-content {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            /* Hide scroll to top button */
+            #scrollToTopBtn {
+                display: none !important;
+            }
+            
+            /* Fix video section */
+            .video-content {
+                flex-direction: column !important;
+            }
+            
+            .video-text, 
+            .video-wrapper {
+                width: 100% !important;
+            }
+            
+            /* Fix contact section */
+            .contact-content {
+                flex-direction: column !important;
+            }
+            
+            .contact-form, 
+            .contact-info {
+                width: 100% !important;
+                margin-bottom: 30px;
+            }
+            
+            /* Fix testimonials */
+            .testimonial-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            /* Fix service features */
+            .features-container {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            
+            .feature-item {
+                width: 100% !important;
+                margin-bottom: 20px !important;
+            }
+            
+            /* Fix about section */
+            .about-content {
+                flex-direction: column !important;
+            }
+            
+            .about-image,
+            .about-text {
+                width: 100% !important;
+            }
+            
+            /* Adjust font sizes for mobile */
+            .section-title {
+                font-size: 1.5rem !important;
+            }
+            
+            .footer-title {
+                margin-top: 15px !important;
+            }
+            
+            /* Improve spacing on mobile */
+            .container {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+        }
+        
+        /* Fix hero section images */
+        .slideshow-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .hero {
+            position: relative;
+            overflow: hidden;
+            height: 70vh; /* Default height */
+            min-height: 400px;
+        }
+        
+        .slideshow-carousel,
+        .slideshow-slide,
+        .slideshow-content,
+        .slideshow-image {
+            height: 100%;
+        }
+        
+        .video-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        /* Ensure contact section layout is flexible */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        /* Ensure about section layout is flexible */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <img src="/img/pnj-logo.png" alt="PNJ Logo" style="width: auto; height: 50px;">
+            </a>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/index.html">Trang chủ</a></li>
+                    <li><a href="/HTML/trang-suc-cuoi.html">Trang sức cưới</a></li>
+                    <li><a href="/HTML/dong-ho.html">Đồng hồ</a></li>
+                    <li><a href="/HTML/qua-tang.html">Quà tặng</a></li>
+                    <li><a href="/HTML/bai-viet.html">Blog</a></li>
+                    <li><a href="/HTML/khuyen-mai.html">Khuyến mãi</a></li>
+                    <li><a href="/HTML/thanh-vien.html">Thành viên</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon-wrapper">
+                <a href="#" class="cart-icon-link" aria-label="Giỏ hàng">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero" id="home" style="position: relative; overflow: hidden;">
+        <div class="slideshow-carousel">
+            <!-- Slide 1 -->
+            <div class="slideshow-slide">
+                <div class="slideshow-content">
+                    <div class="slideshow-image">
+                        <img src="/img/hero-img1.png" alt="PNJ Silver Jewelry" style="width: 100%; height: auto; object-fit: cover;">
+                        <div class="slideshow-overlay"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slideshow-slide active">
+                <div class="slideshow-content">
+                    <div class="slideshow-image">
+                        <img src="/img/hero-img2.png" alt="PNJ Silver Fashion" style="width: 100%; height: auto; object-fit: cover;">
+                        <div class="slideshow-overlay"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slideshow-slide">
+                <div class="slideshow-content">
+                    <div class="slideshow-image">
+                        <img src="/img/hero-img3.png" alt="PNJ Silver Collection" style="width: 100%; height: auto; object-fit: cover;">
+                        <div class="slideshow-overlay"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slideshow-dots">
+                <span class="dot"></span>
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+    <div class="section-spacing section-spacing--padded"
+        style="--background: 236, 243, 251 ; background-color: var(--light-blue);--text-color: 20, 55, 101; color: var(--navy);--border-color:196, 140, 70;">
+        <div class="scrolling-content">
+            <div class="scrolling-content__item">
+                <p class="scrolling-content__text"><em>GIẢM 10% CHO ĐƠN HÀNG ĐẦU TIÊN</em></p>
+                <p class="scrolling-content__text"><em><strong>FREE SHIP TOÀN QUỐC</strong></em></p>
+            </div>
+            <div class="scrolling-content__item">
+                <p class="scrolling-content__text"><em>GIẢM 10% CHO ĐƠN HÀNG ĐẦU TIÊN</em></p>
+                <p class="scrolling-content__text"><em><strong>FREE SHIP TOÀN QUỐC</strong></em></p>
+            </div>
+            <div class="scrolling-content__item">
+                <p class="scrolling-content__text"><em>GIẢM 10% CHO ĐƠN HÀNG ĐẦU TIÊN</em></p>
+                <p class="scrolling-content__text"><em><strong>FREE SHIP TOÀN QUỐC</strong></em></p>
+            </div>
+            <div class="scrolling-content__item">
+                <p class="scrolling-content__text"><em>GIẢM 10% CHO ĐƠN HÀNG ĐẦU TIÊN</em></p>
+                <p class="scrolling-content__text"><em><strong>FREE SHIP TOÀN QUỐC</strong></em></p>
+            </div>
+            <div class="scrolling-content__item">
+                <p class="scrolling-content__text"><em>GIẢM 10% CHO ĐƠN HÀNG ĐẦU TIÊN</em></p>
+                <p class="scrolling-content__text"><em><strong>FREE SHIP TOÀN QUỐC</strong></em></p>
+            </div>
+            <div class="scrolling-content__item">
+                <p class="scrolling-content__text"><em>GIẢM 10% CHO ĐƠN HÀNG ĐẦU TIÊN</em></p>
+                <p class="scrolling-content__text"><em><strong>FREE SHIP TOÀN QUỐC</strong></em></p>
+            </div>
+        </div>
+    </div>
+    <!-- Service Features -->
+    <section class="service-features">
+        <div class="container">
+            <div class="features-container" data-aos="fade-up">
+                <div class="feature-item">
+                    <img src="img/shipping-icon.svg" height="50px" alt="">
+                    <div class="feature-text">
+                        <h3>Miễn phí</h3>
+                        <p>Giao hàng toàn quốc</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <img src="img/247-icon.svg" height="50px" alt="">
+                    <div class="feature-text">
+                        <h3>Dễ dàng</h3>
+                        <p>Đổi trả 30 ngày</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <img src="img/return-icon.svg" height="50px" alt="">
+                    <div class="feature-text">
+                        <h3>Hỗ trợ</h3>
+                        <p>24/7 trực tuyến</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about" style="padding-top: 50px; padding-bottom: 50px;">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="800"> 
+                <span style="color: #143765;">Câu chuyện</span>
+                <span style="color: #C48C46;">thương hiệu</span></h2>
+            <div class="about-content" >
+                <div class="about-image" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="/img/pnj-intro.png" alt="PNJ Jewelry">
+                </div>
+                <div class="about-text" style="padding-left: 25px" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                    <h3 class="about-title">Trang sức tinh tế, chất lượng đẳng cấp</h3>
+                    <p class="about-description">
+                        Công ty Cổ phần Vàng bạc đá quý Phú Nhuận (PNJ) là doanh nghiệp hàng đầu trong lĩnh vực chế tác
+                        và bán lẻ trang sức tại Việt Nam. Với hơn 30 năm kinh nghiệm, PNJ tự hào là thương hiệu trang
+                        sức uy tín được hàng triệu khách hàng tin yêu.
+                    </p>
+                    <p class="about-description">
+                        Chúng tôi sở hữu <strong>mạng lưới hơn 300 cửa hàng</strong> trên toàn quốc và sản xuất từ các
+                        <strong>nhà máy hiện đại với công nghệ tiên tiến</strong>, tạo nên những sản phẩm trang sức tinh
+                        xảo, chất lượng cao. PNJ không ngừng đổi mới, sáng tạo để đem đến những thiết kế độc đáo, phù
+                        hợp với xu hướng thời trang và thẩm mỹ của người Việt Nam.
+                    </p>
+                    <p class="about-description">
+                        PNJ cam kết mang đến <strong>sản phẩm chất lượng cao</strong> với <strong>dịch vụ chuyên
+                            nghiệp</strong> và chính sách bảo hành trọn đời. Mỗi sản phẩm của chúng tôi đều được chế tác
+                        tỉ mỉ, đảm bảo độ tinh xảo và giá trị bền vững theo thời gian, góp phần làm đẹp cuộc sống và tôn
+                        vinh vẻ đẹp của mỗi người.
+                    </p>
+                    <div style="text-align: end; display: flex; justify-content: flex-end;">
+                        <a href="#" class="logo"
+                            style="font-size: 1.4rem; color: #143765; font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 12px; text-align: end;">
+                            <span style="color: #C48C46;">PNJ Silver</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title"> 
+                <span style="color: #143765;">Bộ Sưu Tập</span>
+                <span style="color: #C48C46;"">Trang Sức Bạc</span></h2>
+            <div class="container container--lg">
+                <div class="product-gallery" style="display: flex; flex-direction: row; gap: 20px; width: 100%;">
+                    <div class="product-gallery__image-list" style="width: 50%; background: #F7F7F7; padding-bottom: 20px;">
+                        <div class="contents" style="background: #F7F7F7;">
+                            <div class="product-gallery__carousel scroll-area full-bleed md:unbleed is-scrollable" role="region">
+                                <div class="product-gallery__media snap-center is-initial" data-media-type="image" data-media-id="37480047182115" role="group" aria-label="Item 1 of 13">
+                                    <img id="mainImage" src="/img/feature-product1.png" alt="Product" srcset="/img/feature-product1.png" width="300" height="400" loading="eager" fetchpriority="high">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+                            <img src="/img/fast-icon.svg" alt="" height="70px" width="70px">
+                            <img src="/img/tragop-icon.svg" alt="" height="50px" width="50px">
+                        </div>
+                        <div class="product-gallery__thumbnail-list" style="background: #F7F7F7; margin-top: 50px;">
+                            <button type="button" class="thumbnail-nav-button prev" data-action="prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="product-gallery__thumbnail-scroller">
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product1.png" data-media-position="1" aria-current="true" aria-label="Go to item 1">
+                                    <img src="/img/feature-product1.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product2.png" data-media-position="2" aria-label="Go to item 2">
+                                    <img src="/img/feature-product2.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product3.png" data-media-position="3" aria-label="Go to item 3">
+                                    <img src="/img/feature-product3.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product4.png" data-media-position="4" aria-label="Go to item 4">
+                                    <img src="/img/feature-product4.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product5.png" data-media-position="5" aria-label="Go to item 5">
+                                    <img src="/img/feature-product5.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product6.png" data-media-position="6" aria-label="Go to item 6">
+                                    <img src="/img/feature-product6.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product7.png" data-media-position="7" aria-label="Go to item 7">
+                                    <img src="/img/feature-product7.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product8.png" data-media-position="8" aria-label="Go to item 8">
+                                    <img src="/img/feature-product8.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product9.png" data-media-position="9" aria-label="Go to item 9">
+                                    <img src="/img/feature-product9.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product10.png" data-media-position="10" aria-label="Go to item 10">
+                                    <img src="/img/feature-product10.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product11.png" data-media-position="11" aria-label="Go to item 11">
+                                    <img src="/img/feature-product11.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product12.png" data-media-position="12" aria-label="Go to item 12">
+                                    <img src="/img/feature-product12.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                                <button type="button" class="product-gallery__thumbnail" data-image-url="/img/feature-product13.png" data-media-position="13" aria-label="Go to item 13">
+                                    <img src="/img/feature-product13.png" alt="Product" width="56" height="56" class="object-contain">
+                                </button>
+                            </div>
+                            <button type="button" class="thumbnail-nav-button next" data-action="next">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info" style="width: 50%;">
+                        <div class="product-info__block-list">
+                            <div class="product-info__block-item" data-block-type="title">
+                                <h2 style="font-size: 1.8rem; text-align: left; text-transform: uppercase; padding-left: 0 !important; margin-left: 0 !important; color: #143765;"
+                                    class="product-title h3">
+                                    Nhẫn Kim cương, Vàng 14K, 18K
+                                </h2>
+                            </div>
+                            <div class="product-info__block-item" data-block-type="badges">
+                                <div class="badge badge--on-sale">Giảm 69%</div>
+                                <div class="badge badge--shipping"><i class="fas fa-shipping-fast"></i> Ship
+                                    7-10 ngày</div>
+                                <div class="badge badge--return"><i class="fas fa-exchange-alt"></i> Lỗi đổi
+                                    trả
+                                </div>
+                                <div class="badge badge--rating"><i class="fas fa-star"></i> Đánh giá cao
+                                </div>
+                            </div>
+                            <div class="product-info__block-item" data-block-type="price"
+                                style="display: flex; justify-content: space-between; align-items: center;">
+                                <div class="v-stack">
+                                    <div class="price-list price-list--product">
+                                        <div class="h4 text-on-sale">
+                                            <span style="color: #938750 !important;" class="sr-only">Giá
+                                                khuyến
+                                                mãi</span>6.900.000₫
+                                        </div>
+                                        <div class="h5 text-subdued line-through">
+                                            <span class="sr-only">Giá gốc</span>10.150.000₫
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info__block-item" data-block-type="quantity-selector">
+                                    <div class="v-stack gap-1 justify-items-start">
+                                        <div class="quantity-selector">
+                                            <button disabled="" class="quantity-selector__button">
+                                                <span class="sr-only">Giảm số lượng</span>
+                                                <svg aria-hidden="true" focusable="false" fill="none" width="10"
+                                                    class="icon icon-minus" viewBox="0 0 12 12">
+                                                    <path d="M0 6h12" stroke="currentColor" stroke-width="1.3">
+                                                    </path>
+                                                </svg>
+                                            </button>
+                                            <div style="--quantity-selector-character-count: 1ch;">
+                                                <input class="quantity-selector__input" type="number" value="1"
+                                                    name="quantity" inputmode="numeric" step="1" min="1"
+                                                    aria-label="Thay đổi số lượng">
+                                            </div>
+                                            <button class="quantity-selector__button">
+                                                <span class="sr-only">Tăng số lượng</span>
+                                                <svg aria-hidden="true" focusable="false" fill="none" width="10"
+                                                    class="icon icon-plus" viewBox="0 0 12 12">
+                                                    <path d="M6 0v12M0 6h12" stroke="currentColor"
+                                                        stroke-width="1.3"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="product-info__block-item" data-block-type="buy-buttons">
+                                <div class="v-stack gap-4" style="margin-top: 12px;">
+                                    <div class="buy-buttons buy-buttons--has-dynamic">
+                                        <button type="button" class="button w-full"
+                                            style="--button-background: 28 28 28;--button-outline-color: 28 28 28;--button-text-color: 255 249 241; border-radius: 0px !important;">Thêm
+                                            vào giỏ hàng</button>
+                                        <button type="button" style="border-radius: 0px !important;"
+                                            class="shopify-payment-button button button--secondary w-full">Mua
+                                            ngay</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-info__block-group accordion-group">
+                                <div class="product-info__block-item" data-block-type="accordion">
+                                    <div class="accordion">
+                                        <details class="accordion__disclosure group" aria-expanded="false">
+                                            <summary>
+                                                <span class="accordion__toggle h6">
+                                                    <span class="text-with-icon gap-4">
+                                                        <svg aria-hidden="true" focusable="false" fill="none"
+                                                            stroke-width="1.3" width="16"
+                                                            class="icon icon-picto-jewelry" viewBox="0 0 24 24">
+                                                            <path clip-rule="evenodd"
+                                                                d="M19.237 3.225a1.5 1.5 0 0 0-1.2-.6h-12a1.5 1.5 0 0 0-1.2.6L1.5 7.676a1.5 1.5 0 0 0 .048 1.86l9.338 11.3a1.5 1.5 0 0 0 2.3 0l9.338-11.3a1.5 1.5 0 0 0 .048-1.86l-3.335-4.451Z"
+                                                                stroke="currentColor" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                            <path
+                                                                d="m5.349 2.792 6.688 18.583m6.687-18.583-6.687 18.583M1.198 8.625h21.673m-15.334 0 4.5-6 4.5 6"
+                                                                stroke="currentColor" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>CHI TIẾT SẢN PHẨM
+                                                    </span>
+                                                    <span class="animated-plus group-expanded:rotate"
+                                                        aria-hidden="true"></span>
+                                                </span>
+                                            </summary>
+                                            <div class="accordion__content prose">
+                                                <p>CHẤT LIỆU | Được chế tác tinh xảo từ bạc cao cấp theo tiêu chuẩn PNJ, đảm bảo độ sáng bóng và bền đẹp theo thời gian.<br><br>ĐẶC ĐIỂM | Khám phá sự đa dạng trong thiết kế trang sức bạc PNJ, từ những mẫu cơ bản thanh lịch đến những kiểu dáng độc đáo, thời thượng, phù hợp với mọi phong cách và dịp sự kiện. Mỗi sản phẩm đều thể hiện sự tỉ mỉ và tâm huyết của người thợ kim hoàn PNJ.</p>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </div>
+                                <div class="product-info__block-item" data-block-type="accordion">
+                                    <div class="accordion">
+                                        <details class="accordion__disclosure group" aria-expanded="false">
+                                            <summary>
+                                                <span class="accordion__toggle h6">
+                                                    <span class="text-with-icon gap-4">
+                                                        <svg aria-hidden="true" focusable="false" fill="none"
+                                                            stroke-width="1.3" width="16"
+                                                            class="icon icon-picto-coupon" viewBox="0 0 24 24">
+                                                            <path clip-rule="evenodd"
+                                                                d="M1.061 2.56v6.257a3 3 0 0 0 .878 2.121L13.5 22.5a1.5 1.5 0 0 0 2.121 0l6.879-6.88a1.5 1.5 0 0 0 0-2.121L10.939 1.938a3 3 0 0 0-2.121-.878H2.561a1.5 1.5 0 0 0-1.5 1.5Z"
+                                                                stroke="currentColor" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                            <path clip-rule="evenodd"
+                                                                d="M6.311 7.81a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
+                                                                stroke="currentColor" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>ĐẢM BẢO HOÀN TIỀN
+                                                    </span>
+                                                    <span class="animated-plus group-expanded:rotate"
+                                                        aria-hidden="true"></span>
+                                                </span>
+                                            </summary>
+                                            <div class="accordion__content prose">
+                                                <p>Nếu vòng tay của bạn bị hư hỏng hoặc có lỗi trong vòng 30
+                                                    ngày kể từ khi nhận hàng, chúng tôi sẽ vui vẻ gửi cho
+                                                    bạn
+                                                    một vòng tay thay thế miễn phí hoặc hoàn tiền đầy đủ
+                                                    theo
+                                                    yêu cầu!</p>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </div>
+                                <div class="product-info__block-item" data-block-type="accordion">
+                                    <div class="accordion">
+                                        <details class="accordion__disclosure group" aria-expanded="false">
+                                            <summary>
+                                                <span class="accordion__toggle h6">
+                                                    <span class="text-with-icon gap-4">
+                                                        <svg aria-hidden="true" focusable="false" fill="none"
+                                                            stroke-width="1.3" width="16"
+                                                            class="icon icon-picto-love" viewBox="0 0 24 24">
+                                                            <path clip-rule="evenodd"
+                                                                d="m12 21.844-9.588-10a5.672 5.672 0 0 1-1.063-6.551v0a5.673 5.673 0 0 1 9.085-1.474L12 5.384l1.566-1.565a5.673 5.673 0 0 1 9.085 1.474v0a5.673 5.673 0 0 1-1.062 6.548L12 21.844Z"
+                                                                stroke="currentColor" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>BẢO HÀNH TRỌN ĐỜI
+                                                    </span>
+                                                    <span class="animated-plus group-expanded:rotate"
+                                                        aria-hidden="true"></span>
+                                                </span>
+                                            </summary>
+                                            <div class="accordion__content prose">
+                                                <p>Tại PNJ, chúng tôi cam kết mang đến những sản phẩm trang sức bạc với chất lượng tốt nhất. Mỗi sản phẩm đều được kiểm định nghiêm ngặt và đi kèm với chính sách bảo hành rõ ràng.</p>
+                                                <p>Chúng tôi tự hào với chất lượng bạc cao cấp đã qua xử lý đặc biệt để giảm thiểu quá trình oxy hóa, giữ cho trang sức luôn sáng đẹp. PNJ áp dụng chính sách <strong>bảo hành và làm sạch trọn đời</strong> cho trang sức bạc PNJ tại tất cả các cửa hàng trên toàn quốc. Nếu có bất kỳ vấn đề gì về sản phẩm do lỗi nhà sản xuất, chúng tôi sẽ hỗ trợ sửa chữa hoặc đổi trả theo quy định.</p>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product Grid Section -->
+            <section 
+            style="background-image: url(img/feature-product-bg.png); background-repeat: no-repeat; background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 100px;"
+            class="product-grid-section">
+                <div class="container">
+                    <div class="section-header" data-aos="fade-up">
+                        <h2>
+                            <span style="color: #143765;">SẢN PHẨM</span>
+                            <span style="color: #DDCB78;">NỔI BẬT</span>
+                        </h2>
+                        <div class="navigation-buttons">
+                            <button class="prev-button" aria-label="Previous slide">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="next-button" aria-label="Next slide">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div 
+                    class="product-slider" data-aos="fade-up" data-aos-delay="100">
+                        <div class="products-container" ">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-content">
+                <div class="video-text" data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="section-title">PNJ <span style="color: #DDCB78;">STORY</span></h2>
+                    <p class="video-description">
+                        Khám phá vẻ đẹp tinh xảo và hiện đại của trang sức bạc PNJ. Mỗi thiết kế là sự kết hợp giữa nghệ thuật chế tác truyền thống và xu hướng thời trang mới nhất, giúp bạn tỏa sáng và thể hiện cá tính riêng trong mọi khoảnh khắc.
+                    </p>
+                    <div class="video-features">
+                        <ul>
+                            <li class="video-feature-list-item">
+                                <div class="video-feature-item">
+                                    <i class="fas fa-medal"></i>
+                                    <span>Chất liệu cao cấp</span>
+                                </div>
+                            </li>
+                            <li class="video-feature-list-item">
+                                <div class="video-feature-item">
+                                    <i class="fas fa-magic"></i>
+                                    <span>Thiết kế độc đáo</span>
+                                </div>
+                            </li>
+                            <li class="video-feature-list-item">
+                                <div class="video-feature-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Tùy chỉnh cá nhân hóa</span>
+                                </div>
+                            </li>
+                            <li class="video-feature-list-item">
+                                <div class="video-feature-item">
+                                    <i class="fas fa-gem"></i>
+                                    <span>Đa dạng mẫu mã</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="video-wrapper" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="video-player">
+                        <img src="/img/story.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">
+                <span style="color: #143765;">Đánh giá từ</span>
+                <span style="color: #DDCB78;">Khách hàng</span></h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <p class="testimonial-text">
+                        Tôi đã mua dây chuyền bạc PNJ Silver để làm quà tặng sinh nhật cho bạn gái và cô ấy vô cùng thích nó. Chất lượng sản phẩm tuyệt vời và dịch vụ khách hàng rất nhiệt tình.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nguyễn Văn A">
+                        </div>
+                        <div class="author-info">
+                            <h4>Trịnh Trần Phương Tuấn</h4>
+                            <p>Hà Nội</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <p class="testimonial-text">
+                        Nhẫn bạc PNJ Silver không chỉ đẹp mà còn rất bền. Tôi đã đeo nó hàng ngày trong 6 tháng và nó vẫn như mới. Thật sự rất hài lòng với sản phẩm này.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Trần Thị B">
+                        </div>
+                        <div class="author-info">
+                            <h4>Nguyễn Thúc Thuỳ Tiên</h4>
+                            <p>TP. Hồ Chí Minh</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <p class="testimonial-text">
+                        Tôi rất thích ý tưởng phối nhiều mẫu lắc tay bạc PNJ Silver để tạo phong cách riêng. Mỗi lần mua thêm một mẫu mới, tôi lại có cảm giác mới mẻ và tự tin hơn. Thật tuyệt vời!
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/66.jpg" alt="Lê Thị C">
+                        </div>
+                        <div class="author-info">
+                            <h4>Nguyễn Cao Kỳ Duyên</h4>
+                            <p>Đà Nẵng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="form-title" style="color: #143765;">Liên hệ với chúng tôi</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tin nhắn</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn form-btn">Gửi tin nhắn</button>
+                    </form>
+                </div>
+                <div class="contact-info" data-aos="fade-left" data-aos-duration="1000">
+                    <h3 class="form-title" style="color: #143765;">Thông tin liên hệ</h3>
+                    <p class="contact-info-text" style="color: #777777;">
+                        Chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7. Hãy liên hệ với chúng tôi qua các kênh dưới đây.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p style="color: #777777;">170E Phan Đăng Lưu, P.3, Q.Phú Nhuận, TP.HCM</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <p style="color: #777777;">1800 545 457</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <p style="color: #777777;">customercare@pnj.com.vn</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <p style="color: #777777;">Thứ 2 - Chủ nhật: 8:00 - 21:00</p>
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/PNJ.COM.VN/" target="_blank" class="social-icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/pnj_jewelry/" target="_blank" class="social-icon"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://pnj.com.vn/" target="_blank" class="social-icon"><i
+                                class="fas fa-globe"></i></a>
+                    </div>
+                    <!-- Bản đồ Google Maps -->
+                    <div class="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.182346276126!2d106.68903727568353!3d10.795966758792534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528d66ed86ac5%3A0xf19680a11e93c208!2zQ8O0bmcgdHkgQ-G7lSBwaOG6p24gVsOgbmcgYuG6oWMgxJHDoSBxdcO9IFBow7ogTmh14bqtbg!5e0!3m2!1svi!2s!4v1685605348929!5m2!1svi!2s"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="footer-logo">PNJ Silver</a>
+            <p class="footer-about" style="margin-bottom: 24px; font-size: 18px;">
+                PNJ Silver - Thương hiệu trang sức bạc cao cấp thuộc Công ty Cổ phần Vàng bạc đá quý Phú Nhuận
+                với sứ mệnh mang đến những sản phẩm trang sức bạc chất lượng cao, thiết kế độc đáo và dịch vụ chuyên
+                nghiệp.
+            </p>
+            <div class="footer-content" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;">
+                <div class="footer-col">
+                    <h4 class="footer-title">LIÊN HỆ</h4>
+                    <ul class="footer-contact-list">
+                        <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 8px; color: #C48C46;"></i>
+                            170E Phan Đăng Lưu, P.3, <br /> Q.Phú Nhuận, TP.HCM
+                        </li>
+                        <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                            <i class="fas fa-phone-alt" style="margin-right: 4px; color: #C48C46;"></i>
+                            1800 545 457
+                        </li>
+                        <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                            <i class="fas fa-envelope" style="margin-right: 4px; color: #C48C46;"></i>
+                            customercare@pnj.com.vn
+                        </li>
+                    </ul>
+                    <div class="footer-social" style="display: flex; gap: 12px;">
+                        <a href="https://www.facebook.com/people/PNJ/61565917419919/" target="_blank"
+                            class="social-icon" style="background: #3b5998;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/pnjy/" target="_blank" class="social-icon"
+                            style="background: #e4405f;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://pnj.godaddysites.com/trang-ch%E1%BB%A7" target="_blank"
+                            class="social-icon" style="background: #DDCB78;"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">LIÊN KẾT NHANH</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Trang chủ</a></li>
+                        <li><a href="#about">Về chúng tôi</a></li>
+                        <li><a href="#products">Sản phẩm</a></li>
+                        <li><a href="#commit">Cam kết</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">HỖ TRỢ</h4>
+                    <ul class="footer-links">
+                        <li><a href="/HTML/chinh-sach-bao-hanh.html" target="_blank">Chính sách bảo hành</a></li>
+                        <li><a href="/HTML/chinh-sach-doi-tra.html" target="_blank">Chính sách đổi trả</a></li>
+                        <li><a href="/HTML/chinh-sach-van-chuyen.html" target="_blank">Chính sách vận chuyển</a></li>
+                        <li><a href="/HTML/huong-dan-mua-hang.html" target="_blank">Hướng dẫn mua hàng</a></li>
+                        <li><a href="/HTML/cau-hoi-thuong-gap.html" target="_blank">Câu hỏi thường gặp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">ĐĂNG KÝ NHẬN TIN</h4>
+                    <p class="footer-newsletter">
+                        Đăng ký để nhận thông tin mới nhất về sản phẩm và khuyến mãi đặc biệt.
+                    </p>
+                    <div class="newsletter-form">
+                        <input 
+                        style="background: #ffffff; color: #777777; border: 1px solid #C48C4680; width: 100%;"
+                        type="email" class="newsletter-input" placeholder="Email của bạn">
+                        <button type="submit" class="newsletter-btn">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2023 PNJ. All Rights Reserved.
+                </p>
+                <div class="payment-methods">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png"
+                        alt="Visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png"
+                        alt="Mastercard">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1200px-PayPal.svg.png"
+                        alt="PayPal">
+                    <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png" alt="MoMo">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/JS/giao-dien.js"></script>
+    <script src="/JS/bo-truot.js"></script>
+    <script src="/JS/thu-vien-san-pham.js"></script>
+    <script src="/JS/bai-viet.js"></script>
+    <script type="module" src="/JS/luoi-san-pham.js"></script>
+    <script src="/JS/dieu-huong.js"></script>
+    <button id="scrollToTopBtn" title="Lên đầu trang"
+        style="display: flex; align-items: center; justify-content: center">
+        <i class="fas fa-chevron-up" style="font-size: 16px;"></i>
+    </button>
+</body>
+
+</html>

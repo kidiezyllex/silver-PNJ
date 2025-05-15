@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu hỏi thường gặp - PNJ</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/CSS/trang-dich.css">
+    <link rel="stylesheet" href="/CSS/dieu-huong.css">
+    <style>
+        .faq-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .faq-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .faq-title {
+            font-size: 2.5rem;
+            color: #070322;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            display: inline-block;
+        }
+
+        .faq-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: #DDCB78;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .faq-description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .faq-content {
+            background-color: #f9f6f1;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-category {
+            margin-bottom: 30px;
+        }
+
+        .faq-category-title {
+            font-size: 1.8rem;
+            color: #070322;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-category-title i {
+            color: #DDCB78;
+            margin-right: 15px;
+            font-size: 1.6rem;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            background-color: #fff;
+            color: #070322;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-left: 3px solid #DDCB78;
+        }
+
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-question i {
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background-color: #fff;
+        }
+
+        .faq-answer-content {
+            padding: 0 20px 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-question {
+            background-color: #f5f0e5;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 60px 0;
+            }
+
+            .faq-title {
+                font-size: 2rem;
+            }
+
+            .faq-content {
+                padding: 30px 20px;
+            }
+
+            .faq-category-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="/index.html" class="logo">
+                <img src="/img/pnj-logo.png" alt="PNJ Logo" style="width: auto; height: 50px;">
+            </a>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="cart-icon-wrapper">
+                <a href="#" class="cart-icon-link" aria-label="Giỏ hàng">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h1 class="faq-title">Câu hỏi thường gặp</h1>
+                <p class="faq-description">Dưới đây là những câu hỏi thường gặp về sản phẩm và dịch vụ của pnj
+                    pnj. Nếu bạn không tìm thấy câu trả lời cho thắc mắc của mình, vui lòng liên hệ với chúng tôi.
+                </p>
+            </div>
+
+            <div class="faq-content">
+                <div class="faq-category">
+                    <h2 class="faq-category-title">
+                        <i class="fas fa-info-circle"></i>
+                        Thông tin về sản phẩm bạc PNJ
+                    </h2>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Trang sức bạc PNJ làm từ chất liệu gì?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Trang sức bạc PNJ chủ yếu được chế tác từ bạc 92.5% (bạc S925) – là loại bạc cao cấp, sáng bóng, bền màu, an toàn cho da nhạy cảm. Một số sản phẩm có phủ lớp Rhodium giúp tăng độ sáng bóng và chống xỉn màu.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Tại sao bạc PNJ lại bị xỉn màu sau một thời gian sử dụng?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Bạc có thể bị xỉn màu do phản ứng với mồ hôi, hóa chất, môi trường hoặc do quá trình oxy hóa tự nhiên. Đây là hiện tượng bình thường và có thể làm sáng lại bằng các phương pháp vệ sinh đơn giản.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Trang sức bạc PNJ có gây dị ứng không?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Bạc S925 của PNJ an toàn cho hầu hết mọi loại da, kể cả da nhạy cảm. Tuy nhiên, nếu bạn dị ứng với hợp kim khác (như nickel), nên chọn sản phẩm bạc nguyên chất hoặc bạc phủ Rhodium.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h2 class="faq-category-title">
+                        <i class="fas fa-shopping-cart"></i>
+                        Mua hàng & Thanh toán
+                    </h2>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Làm thế nào để mua trang sức bạc PNJ online?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Bạn có thể đặt hàng trực tuyến tại website <a href="https://www.pnj.com.vn" target="_blank">www.pnj.com.vn</a>, chọn sản phẩm, thêm vào giỏ hàng, điền thông tin giao hàng và chọn phương thức thanh toán (tiền mặt, chuyển khoản, thẻ tín dụng, ví điện tử...).
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            PNJ có giao hàng toàn quốc không?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                PNJ giao hàng miễn phí toàn quốc cho mọi đơn hàng, thời gian từ 1-7 ngày tùy khu vực. Một số khu vực trung tâm có dịch vụ giao hàng siêu tốc 3 giờ.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Có thể kiểm tra sản phẩm trước khi nhận không?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Khách hàng được quyền kiểm tra sản phẩm trước khi thanh toán. Nếu phát hiện sản phẩm không đúng mô tả, có thể từ chối nhận hàng.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h2 class="faq-category-title">
+                        <i class="fas fa-exchange-alt"></i>
+                        Đổi trả & Hoàn tiền
+                    </h2>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Tôi có thể đổi trả trang sức bạc PNJ không?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Sản phẩm bạc được đổi size (kích cỡ) trong vòng 72 giờ kể từ khi nhận hàng, với điều kiện sản phẩm còn mới, chưa qua sử dụng. Không hỗ trợ đổi sang mẫu khác hoặc hoàn tiền.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Thời gian hoàn tiền khi trả hàng là bao lâu?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                PNJ hoàn tiền theo phương thức thanh toán ban đầu, thời gian từ 7-15 ngày làm việc tùy phương thức.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h2 class="faq-category-title">
+                        <i class="fas fa-user-shield"></i>
+                        Bảo hành & Bảo dưỡng
+                    </h2>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Trang sức bạc PNJ được bảo hành như thế nào?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Miễn phí bảo hành kỹ thuật, nước xi trong 3 tháng đầu. Từ tháng 4 đến hết tháng 12 tính phí theo quy định. Miễn phí thay đá tổng hợp trong 12 tháng (trừ đá dán trên charm). Trên 12 tháng chỉ nhận làm sạch miễn phí bằng máy siêu âm.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Có được đánh bóng, làm mới miễn phí không?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Khách hàng có thẻ VIP được miễn phí đánh bóng, xi mới trong 12 tháng cho tất cả sản phẩm đã mua có tích lũy trên thẻ.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Làm thế nào để bảo quản trang sức bạc luôn sáng đẹp?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Tránh tiếp xúc hóa chất, nước biển, nước hồ bơi. Khi không sử dụng nên cất trong hộp kín, tránh để chung với trang sức khác. Vệ sinh định kỳ bằng nước ấm pha xà phòng nhẹ và khăn mềm.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h2 class="faq-category-title">
+                        <i class="fas fa-question-circle"></i>
+                        Câu hỏi khác
+                    </h2>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            PNJ có nhận khắc tên lên trang sức bạc không?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                PNJ hỗ trợ khắc tên miễn phí trên một số sản phẩm bạc, vui lòng yêu cầu khi đặt hàng hoặc liên hệ cửa hàng gần nhất để được tư vấn.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Có thể mua trang sức bạc phong thủy theo mệnh/cung không?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                PNJ có nhiều mẫu trang sức bạc phong thủy phù hợp từng mệnh, từng cung hoàng đạo. Tham khảo tại website hoặc liên hệ tổng đài 1800 54 54 57 để được tư vấn.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="container">
+        <a href="#" class="footer-logo">PNJ Silver</a>
+        <p class="footer-about" style="margin-bottom: 24px; font-size: 18px;">
+            PNJ Silver - Thương hiệu trang sức bạc cao cấp thuộc Công ty Cổ phần Vàng bạc đá quý Phú Nhuận
+            với sứ mệnh mang đến những sản phẩm trang sức bạc chất lượng cao, thiết kế độc đáo và dịch vụ chuyên
+            nghiệp.
+        </p>
+        <div class="footer-content" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;">
+            <div class="footer-col">
+                <h4 class="footer-title">LIÊN HỆ</h4>
+                <ul class="footer-contact-list">
+                    <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <i class="fas fa-map-marker-alt" style="margin-right: 8px; color: #C48C46;"></i>
+                        170E Phan Đăng Lưu, P.3, <br /> Q.Phú Nhuận, TP.HCM
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <i class="fas fa-phone-alt" style="margin-right: 4px; color: #C48C46;"></i>
+                        1800 545 457
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <i class="fas fa-envelope" style="margin-right: 4px; color: #C48C46;"></i>
+                        customercare@pnj.com.vn
+                    </li>
+                </ul>
+                <div class="footer-social" style="display: flex; gap: 12px;">
+                    <a href="https://www.facebook.com/people/PNJ/61565917419919/" target="_blank"
+                        class="social-icon" style="background: #3b5998;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/pnjy/" target="_blank" class="social-icon"
+                        style="background: #e4405f;"><i class="fab fa-instagram"></i></a>
+                    <a href="https://pnj.godaddysites.com/trang-ch%E1%BB%A7" target="_blank"
+                        class="social-icon" style="background: #DDCB78;"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">LIÊN KẾT NHANH</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="#about">Về chúng tôi</a></li>
+                    <li><a href="#products">Sản phẩm</a></li>
+                    <li><a href="#commit">Cam kết</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">HỖ TRỢ</h4>
+                <ul class="footer-links">
+                    <li><a href="/HTML/chinh-sach-bao-hanh.html" target="_blank">Chính sách bảo hành</a></li>
+                    <li><a href="/HTML/chinh-sach-doi-tra.html" target="_blank">Chính sách đổi trả</a></li>
+                    <li><a href="/HTML/chinh-sach-van-chuyen.html" target="_blank">Chính sách vận chuyển</a></li>
+                    <li><a href="/HTML/huong-dan-mua-hang.html" target="_blank">Hướng dẫn mua hàng</a></li>
+                    <li><a href="/HTML/cau-hoi-thuong-gap.html" target="_blank">Câu hỏi thường gặp</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">ĐĂNG KÝ NHẬN TIN</h4>
+                <p class="footer-newsletter">
+                    Đăng ký để nhận thông tin mới nhất về sản phẩm và khuyến mãi đặc biệt.
+                </p>
+                <div class="newsletter-form">
+                    <input 
+                    style="background: #ffffff; color: #777777; border: 1px solid #C48C4680; width: 100%;"
+                    type="email" class="newsletter-input" placeholder="Email của bạn">
+                    <button type="submit" class="newsletter-btn">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; 2023 PNJ. All Rights Reserved.
+            </p>
+            <div class="payment-methods">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png"
+                    alt="Visa">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png"
+                    alt="Mastercard">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1200px-PayPal.svg.png"
+                    alt="PayPal">
+                <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png" alt="MoMo">
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/JS/giao-dien.js"></script>
+    <script src="/JS/chung.js"></script>
+    <script src="/JS/dieu-huong.js"></script>
+        style="display: none; align-items: center; justify-content: center">
+        <i class="fas fa-chevron-up" style="font-size: 16px;"></i>
+    </button>
+    <script>
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.getElementById("scrollToTopBtn").style.display = "flex";
+            } else {
+                document.getElementById("scrollToTopBtn").style.display = "none";
+            }
+        }
+        document.getElementById("scrollToTopBtn").addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+    <!-- Script for FAQ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+
+    <style>
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #916841;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #7a5836;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            #scrollToTopBtn {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                padding: 10px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</body>
+
+</html>
